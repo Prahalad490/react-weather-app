@@ -6,6 +6,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 
+
 function App() {
   
   const [items, setItem] = useState([]);
@@ -37,7 +38,8 @@ function App() {
 
 
   return (
-    <div>
+    <div className="responsive" >
+    
       <Header />
       <div className="card">
         <div>
@@ -84,8 +86,7 @@ function App() {
         }
       </div>
         <Footer/>
-      
-      
+    
     </div>
   );
 }
