@@ -34,61 +34,56 @@ function App() {
       });
   }, [url]);
 
+
+
   return (
     <div>
       <Header />
       <div className="card">
         <div>
-        <form onSubmit={onsubmit}>
-          <input 
-            className="input-field"
-            onChange={(event) => setInput(event.target.value)}
-            onClick={() => setInput("")}
-            type="text"
-            value={city}
-            placeholder="Search the City Name"
-            
-          ></input>
-          <span className="search">
-          <Button size="medium" variant="contained" color="primary" type="submit">
-            search
-          </Button>
-          </span>
-        </form>
+          <form onSubmit={onsubmit}>
+            <input 
+              className="input-field"
+              onChange={(event) => setInput(event.target.value)}
+              onClick={() => setInput("")}
+              type="text"
+              value={city}
+              placeholder="Search the City Name"
+            ></input>
+            <span className="search">
+              <Button size="medium" variant="contained" color="primary" type="submit">
+                search
+              </Button>
+            </span>
+          </form>
         </div>
-        
       
-       
         {cardDisplay &&
         
         <div className="root">
-        <hr className="divider"></hr>  
-          <div>
-          <h3>{items.name}</h3>
-          <img
+          <hr className="divider"></hr>  
+            <div>
+              <h3>{items.name}</h3> 
+              <img
                 className="weather-icon"
                 src={"http://openweathermap.org/img/w/"+ items.weather[0].icon+ ".png"}
                 alt="weather icon"
               />
-          <h1><strong>{items.main.temp}</strong><span>°C</span></h1>
-          <p>{items.main.temp_min}°C / {items.main.temp_max} °C</p>
-          </div>
+              <h1><strong>{items.main.temp}</strong><span>°C</span></h1>
+              <p>{items.main.temp_min}°C / {items.main.temp_max} °C</p>
+            </div>
+        
+            <div class="details">
           
-
-          <div class="details">
-          
-          <h4>Feels like: <strong>{items.main.feels_like}</strong> °C</h4>
-          <h4>Wind Speed: <strong>{items.wind.speed}</strong> km/h</h4>
-          <h4>Pressure: <strong>{items.main.pressure}</strong> mb</h4>
-          <h4>Humidity: <strong>{items.main.humidity}</strong> %</h4>
-          </div>
-          
-          
+              <h4>Feels like: <strong>{items.main.feels_like}</strong> °C</h4>
+              <h4>Wind Speed: <strong>{items.wind.speed}</strong> km/h</h4>
+              <h4>Pressure: <strong>{items.main.pressure}</strong> mb</h4>
+              <h4>Humidity: <strong>{items.main.humidity}</strong> %</h4>
+            </div>
         </div>
-       
         }
       </div>
-      <Footer/>
+        <Footer/>
       
       
     </div>
