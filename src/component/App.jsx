@@ -38,7 +38,7 @@ function App() {
 
 
   return (
-    <div className="responsive" >
+    <div >
     
       <Header />
       <div className="card">
